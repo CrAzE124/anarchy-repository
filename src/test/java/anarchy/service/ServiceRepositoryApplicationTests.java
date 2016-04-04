@@ -1,4 +1,4 @@
-package za.co.tifu;
+package anarchy.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,9 +1,9 @@
-package za.co.tifu.repository;
+package anarchy.service.repository;
 
+import anarchy.service.model.ServiceModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Repository;
-import za.co.tifu.model.ServiceModel;
 
 /**
  * Created on 03 April 2016 @ 2:15 PM
@@ -17,7 +17,7 @@ public class ServiceRepository {
     private StringRedisTemplate redisTemplate;
 
     public void addService(ServiceModel model) {
-        redisTemplate.opsForSet().add(model.getKey(), model.getServiceName());
+        redisTemplate.opsForSet().add(model.getKey(), model.getServiceDefinition());
     }
 
     public String getService(String key) {
@@ -25,7 +25,7 @@ public class ServiceRepository {
     }
 
     public void removeService(ServiceModel model) {
-        redisTemplate.opsForSet().remove(model.getKey(), model.getServiceName());
+        redisTemplate.opsForSet().remove(model.getKey(), model.getServiceDefinition());
     }
 
     public void removeEntireServiceSet(String key) {

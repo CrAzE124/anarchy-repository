@@ -17,7 +17,7 @@
 
     <bean
         id="serviceRepository"
-        class="za.co.tifu.repository.ServiceRepository">
+        class="anarchy.service.repository.ServiceRepository">
         <property name="redisTemplate" ref="stringRedisTemplate"/>
     </bean>
 </beans>
